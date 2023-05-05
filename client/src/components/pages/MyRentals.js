@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function MyOrders() {
     return (
-        //code here
+        <div>My Orders</div>
     );
 }

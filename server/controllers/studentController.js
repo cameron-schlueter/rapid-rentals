@@ -4,7 +4,7 @@
 
 // ObjectId() method for converting studentId string into an ObjectId for querying database
 const { ObjectId } = require('mongoose').Types;
-const { Student, Course } = require('../models');
+const { Student, Course } = require('../server/models');
 
 // TODO: Create an aggregate function to get the number of students overall
 const headCount = async () =>

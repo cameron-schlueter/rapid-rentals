@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import NavTabs from './NavTabs';
+import NavBar from './NavBar';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Catalog from './pages/Catalog';
-import MyOrders from './pages/MyOrders';
+import MyRentals from './pages/MyRentals';
 import Footer from './Footer'
+
+const styles = {
+  bg: {
+    position: 'relative'
+  }
+}
 
 
 export default function AppContainer() {
@@ -20,15 +26,15 @@ export default function AppContainer() {
     if (currentPage === 'Catalog') {
       return <Catalog />;
     }
-    return <MyOrders />;
+    return <MyRentals />;
   };
 
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <main style={styles.main}>
-      <NavTabs handlePageChange={handlePageChange} />
-      <section>
+    <main>
+      <NavBar handlePageChange={handlePageChange} />
+      <section style={styles.bg}>
       {renderPage()}
       </section>
       <Footer/>
