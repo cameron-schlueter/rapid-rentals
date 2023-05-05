@@ -1,6 +1,6 @@
 // 5/2/23 just a boilerplace you are good to edit
 
-const { Course, Student } = require('../models');
+const { Course, Student } = require('../server/models');
 
 module.exports = {
   // Get all courses
