@@ -5,22 +5,36 @@ const { Schema, model } = require('mongoose');
 // Schema to create Canoe model
 const canoeSchema = new Schema(
   {
-    first: {
+    id: {
       type: String,
       required: true,
       max_length: 50,
     },
-    last: {
+    name: {
       type: String,
       required: true,
       max_length: 50,
     },
-    github: {
+    stock: {
       type: String,
       required: true,
       max_length: 50,
     },
-    
+    pricing: {
+      type: String,
+      required: true,
+      max_length: 50,
+    },
+    time: {
+      type: String,
+      required: true,
+      max_length: 50,
+    },
+    location: {
+      type: String,
+      required: true,
+      max_length: 50,
+    },
   },
   {
     toJSON: {
