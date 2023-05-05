@@ -1,10 +1,9 @@
 // 5/2/23 just a boilerplace you are good to edit
 
 const { Schema, model } = require('mongoose');
-const assignmentSchema = require('./Assignment');
 
-// Schema to create Student model
-const studentSchema = new Schema(
+// Schema to create Canoe model
+const canoeSchema = new Schema(
   {
     first: {
       type: String,
@@ -21,7 +20,7 @@ const studentSchema = new Schema(
       required: true,
       max_length: 50,
     },
-    assignments: [assignmentSchema],
+    
   },
   {
     toJSON: {
@@ -30,6 +29,6 @@ const studentSchema = new Schema(
   }
 );
 
-const Student = model('student', studentSchema);
+const Canoe = model('canoe', canoeSchema);
 
-module.exports = Student;
+module.exports = Canoe;
