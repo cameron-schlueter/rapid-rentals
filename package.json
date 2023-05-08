@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/cameron-schlueter/rapid-rentals/issues"
   },
-  "homepage": "https://github.com/cameron-schlueter/rapid-rentals#readme"
+  "homepage": "https://github.com/cameron-schlueter/rapid-rentals#readme",
+  "dependencies": {
+    "apollo": "^2.34.0"
+  }
 }
