@@ -1,8 +1,8 @@
-const { canoe } = require('../server/models');
+const { Canoe } = require('../models');
 
 module.exports = {
-  // Get all canoe
-  getCanoe(req, res) {
+  // Get all canoes
+  getCanoes(req, res) {
     Canoe.find()
       .then((canoe) => res.json(canoe))
       .catch((err) => res.status(500).json(err));
@@ -33,7 +33,7 @@ module.exports = {
       .then((canoe) =>
         !canoe
           ? res.status(404).json({ message: 'No canoe with that ID' })
-          : Student.deleteMany({ _id: { $in: canoe.students } })
+          : Canoe.deleteMany({ _id: { $in: canoe.canoes } })
       )
       .then(() => res.json({ message: 'Canoe deleted!' }))
       .catch((err) => res.status(500).json(err));

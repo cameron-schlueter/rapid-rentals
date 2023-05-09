@@ -1,5 +1,3 @@
-// 5/2/23 just a boilerplace you are good to edit
-
 const router = require('express').Router();
 const {
   getCanoes,
@@ -7,7 +5,7 @@ const {
   createCanoe,
   updateCanoe,
   deleteCanoe,
-} = require('../../../controllers/canoeController.js');
+} = require('../../controllers/canoeController');
 
 // /api/canoes
 router.route('/').get(getCanoes).post(createCanoe);

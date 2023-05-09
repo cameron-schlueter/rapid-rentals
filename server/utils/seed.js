@@ -8,4 +8,5 @@ connection.once('open', async () => {
 
   // Drop existing canoes
   await Canoe.deleteMany({});
+  
 });
