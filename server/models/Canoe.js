@@ -1,5 +1,3 @@
-// 5/2/23 just a boilerplace you are good to edit
-
 const { Schema, model } = require('mongoose');
 
 // Schema to create Canoe model
@@ -16,19 +14,19 @@ const canoeSchema = new Schema(
       max_length: 50,
     },
     stock: {
-      type: String,
+      type: Number,
       required: true,
       max_length: 50,
     },
     pricing: {
-      type: String,
+      type: Number,
       required: true,
-      max_length: 50,
+      max_length: 100,
     },
     time: {
-      type: String,
+      type: Date,
       required: true,
-      max_length: 50,
+      max_length: 86400,
     },
     location: {
       type: String,

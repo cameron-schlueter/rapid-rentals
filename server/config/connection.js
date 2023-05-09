@@ -1,5 +1,3 @@
-// 5/2/23 just a boilerplace you are good to edit
-
 const mongoose = require('mongoose');
 
 //change this after local testing, move to atlas
