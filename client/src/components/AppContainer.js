@@ -5,6 +5,7 @@ import Signup from './pages/Signup';
 import Catalog from './pages/Catalog';
 import MyRentals from './pages/MyRentals';
 import Footer from './Footer'
+import Bookings from "./pages/Booking"
 
 const styles = {
   bg: {
@@ -25,6 +26,9 @@ export default function AppContainer() {
     }
     if (currentPage === 'Catalog') {
       return <Catalog />;
+    }
+    if (currentPage === 'Bookings') {
+      return <Bookings />;
     }
     return <MyRentals />;
   };
