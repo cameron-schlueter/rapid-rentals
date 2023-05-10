@@ -3,11 +3,6 @@ const { Schema, model } = require('mongoose');
 // Schema to create Canoe model
 const canoeSchema = new Schema(
   {
-    id: {
-      type: String,
-      required: true,
-      max_length: 50,
-    },
     name: {
       type: String,
       required: true,
@@ -24,9 +19,9 @@ const canoeSchema = new Schema(
       max_length: 100,
     },
     time: {
-      type: Date,
+      type: Number,
       required: true,
-      max_length: 86400,
+      max_length: 1000,
     },
     location: {
       type: String,
