@@ -6,6 +6,8 @@ import Catalog from './pages/Catalog';
 import MyRentals from './pages/MyRentals';
 import Footer from './Footer'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Bookings from "./pages/Booking"
+
 
 const styles = {
   bg: {
@@ -15,7 +17,6 @@ const styles = {
 
 
 export default function AppContainer() {
-
   return (
     <Router>
     <main>

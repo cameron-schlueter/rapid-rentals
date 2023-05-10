@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import styles from "./SignUpPage.module.css";
+import bgImage from "../../assets/SignupBG.jpeg";
+
 
 const SignUpPage = () => {
   const [name, setName] = useState("");
@@ -27,11 +29,12 @@ const SignUpPage = () => {
       className="position-relative d-flex justify-content-center align-items-center"
       style={{
         height: "100vh",
-        backgroundImage: "url(https://www.iliketowastemytime.com/sites/default/files/canoe-mountain-view-hd-wallpaper.jpg)",
+        backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
+      
     >
       <div
         className="position-absolute"

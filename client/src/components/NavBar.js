@@ -1,12 +1,11 @@
 import React from 'react';
+
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link, useLocation} from 'react-router-dom'
 function NavBar() {
-
   const {pathname} = useLocation()
-
   return (
     <>
       <Navbar bg="light" variant="light">
@@ -22,6 +21,24 @@ function NavBar() {
               Catalog
             </Link>
             <Link to="/myrentals" pathname={pathname === '/myrentals' ? 'nav-link active' : 'nav-link'}>
+            </Nav.Link>
+            <Nav.Link
+              href="#booking"
+              onClick={() => handlePageChange('Bookings')}
+              className={
+                currentPage === 'Bookings' ? 'nav-link active' : 'nav-link'
+              }
+            >
+              Book Now
+            </Nav.Link>
+            <Nav.Link
+              href="#myorders"
+              onClick={() => handlePageChange('MyRentals')}
+              className={
+                currentPage === 'MyRentals' ? 'nav-link active' : 'nav-link'
+              }
+            >
+
               My Rentals
             </Link>
             <Link to="/signup" pathname={pathname === '/signup' ? 'nav-link active' : 'nav-link'}>
