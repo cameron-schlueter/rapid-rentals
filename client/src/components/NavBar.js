@@ -1,7 +1,7 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/esm/Container';
+import Nav from 'react-bootstrap/esm/Nav';
+import Navbar from 'react-bootstrap/esm/Navbar';
 
 function NavBar({ currentPage, handlePageChange }) {
   return (
@@ -31,6 +31,15 @@ function NavBar({ currentPage, handlePageChange }) {
               }
             >
               Catalog
+            </Nav.Link>
+            <Nav.Link
+              href="#booking"
+              onClick={() => handlePageChange('Bookings')}
+              className={
+                currentPage === 'Bookings' ? 'nav-link active' : 'nav-link'
+              }
+            >
+              Book Now
             </Nav.Link>
             <Nav.Link
               href="#myorders"
