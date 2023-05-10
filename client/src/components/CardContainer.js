@@ -2,7 +2,6 @@ import React from 'react';
 import {
     MDBCard,
     MDBCardBody,
-    MDBCardTitle,
     MDBCardText,
     MDBCardImage,
     MDBRow,
@@ -16,15 +15,18 @@ import {
         justifyContent: 'center',
         backgroundColor: "rgba(248, 249, 250, 0.7)",
         marginTop: '20vh',
-        width: '80vw',
-        justifyContent: 'center',
+        marginBottom: '20vh',
+        width: '100vw',
         paddingTop: '1vh',
         paddingBottom: '1vh',
         borderRadius: '10px'
     },
     card: {
-        height: 'auto'
-    }
+        height: 'auto',
+        marginLeft: '10%',
+        marginRight: '10%',
+        backgroundColor: 'transparent'
+    },
   }
 
 
@@ -33,8 +35,8 @@ export default function Cards() {
     <div>
         <MDBRow style={styles.row}>
         <MDBCol sm='3'>
-        <MDBCard style={styles.card}>
-        <MDBCardImage src='https://mdbootstrap.com/img/new/standard/nature/182.webp' alt='...' position='top' />
+        <MDBCard style={styles.card} alignment='center'>
+        <MDBCardImage src='https://www.madbeachpaddlesports.com/uploads/5/6/4/5/56458131/s346933295520463466_p53_i3_w2560.jpeg' alt='...' position='top' />
         <MDBCardBody>
             <MDBCardText>
             Paddle across water so clear you can watch the trout swimming below you. 
@@ -45,12 +47,11 @@ export default function Cards() {
         </MDBCol>
 
         <MDBCol sm='3'>
-        <MDBCard style={styles.card}>
-        <MDBCardImage src='https://mdbootstrap.com/img/new/standard/nature/184.webp' position='top' alt='...' />
+        <MDBCard style={styles.card} alignment='center'>
+        <MDBCardImage src='https://cdn.shopify.com/s/files/1/2236/0745/files/BB_Harder_Five2Nine.jpg?v=1655142993' position='top' alt='...' />
         <MDBCardBody>
-            <MDBCardText>
-            At Rapid Rentals, we offer a premium selection of Kayaks, Canoes, and Paddle Boards that will gaurantee you and your family have a blast! 
-            Check out our catalog!
+            <MDBCardText >
+            At Rapid Rentals, we offer a premium selection of kayaks, canoes, and paddleboards that will gaurantee you and your family have a blast! 
             </MDBCardText>
             <MDBBtn href='#'>Go to Catalog</MDBBtn>
         </MDBCardBody>
@@ -58,11 +59,11 @@ export default function Cards() {
         </MDBCol>
 
         <MDBCol sm='3'>
-        <MDBCard style={styles.card}>
-        <MDBCardImage src='https://mdbootstrap.com/img/new/standard/nature/182.webp' alt='...' position='top' />
+        <MDBCard style={styles.card} alignment='center'>
+        <MDBCardImage src='https://img.grouponcdn.com/deal/aNtfBdKpudSd535kdFbe/y9-2048x1229/v1/c870x524.jpg' alt='...' position='top' />
         <MDBCardBody>
             <MDBCardText>
-            Some quick example text to build on the card title and make up the bulk of the card's content.
+            Enjoy hassle-free rentals and friendly, professional service. We're here to get you out exploring the waters of Michigan.
             </MDBCardText>
         </MDBCardBody>
         </MDBCard>
