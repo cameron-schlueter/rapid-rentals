@@ -3,7 +3,7 @@ import { MDBListGroup, MDBListGroupItem } from 'mdb-react-ui-kit';
 
 export default function App() {
   return (
-    <MDBListGroup style={{ width: '100vw' }} light>
+    <MDBListGroup style={{ width: '90%', height: '100%' }} light>
       <MDBListGroupItem tag='a' href='#' action noBorders active aria-current='true' className='px-3'>
         Cras justo odio
       </MDBListGroupItem>

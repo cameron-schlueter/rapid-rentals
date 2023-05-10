@@ -5,6 +5,7 @@ import Signup from './pages/Signup';
 import Catalog from './pages/Catalog';
 import MyRentals from './pages/MyRentals';
 import Footer from './Footer'
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 const styles = {
   bg: {
@@ -14,31 +15,22 @@ const styles = {
 
 
 export default function AppContainer() {
-  const [currentPage, setCurrentPage] = useState('Home');
-
-  const renderPage = () => {
-    if (currentPage === 'Home') {
-      return <Home />;
-    }
-    if (currentPage === 'Signup') {
-      return <Signup />;
-    }
-    if (currentPage === 'Catalog') {
-      return <Catalog />;
-    }
-    return <MyRentals />;
-  };
-
-  const handlePageChange = (page) => setCurrentPage(page);
 
   return (
+    <Router>
     <main>
-      <NavBar handlePageChange={handlePageChange} />
+      <NavBar/>
       <section style={styles.bg}>
-      {renderPage()}
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/signup' element={<Signup/>}/>
+          <Route path='/catalog' element={<Catalog/>}/>
+          <Route path='/myrentals' element={<MyRentals/>}/>
+        </Routes>
       </section>
       <Footer/>
     </main>
+    </Router>
   );
 }
 
