@@ -1,0 +1,10 @@
+.custom-link {
+    color: black;
+    text-decoration: none;
+    margin-right: 15px;
+  }
+
+  .custom-link.nav-link.active {
+    color: black;
+  }
+  
