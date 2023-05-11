@@ -16,7 +16,7 @@ import {
         backgroundColor: "rgba(248, 249, 250, 0.7)",
         marginTop: '20vh',
         marginBottom: '20vh',
-        width: '100vw',
+        width: '100%',
         paddingTop: '1vh',
         paddingBottom: '1vh',
         borderRadius: '10px'
