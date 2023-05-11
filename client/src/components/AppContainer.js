@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import NavBar from './NavBar';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
@@ -6,7 +6,7 @@ import Catalog from './pages/Catalog';
 import MyRentals from './pages/MyRentals';
 import Footer from './Footer'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Bookings from "./pages/Booking"
+import Booking from "./pages/Booking"
 
 
 const styles = {
@@ -27,6 +27,7 @@ export default function AppContainer() {
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/catalog' element={<Catalog/>}/>
           <Route path='/myrentals' element={<MyRentals/>}/>
+          <Route path='/booking' element={<Booking/>}/>
         </Routes>
       </section>
       <Footer/>
