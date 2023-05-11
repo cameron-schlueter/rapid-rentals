@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Container, Form, Button, Card, ListGroup } from "react-bootstrap";
+import { Container, Form, Card, ListGroup } from "react-bootstrap";
 import bgImage from "../../assets/BookingBG.jpeg";
+import StripeReturn from '../StripeReturn'
 
 const Booking = () => {
     const [formData, setFormData] = useState({
@@ -75,7 +76,6 @@ const Booking = () => {
         <div
             className="position-relative d-flex justify-content-center align-items-center"
             style={{
-                height: "100vh",
                 backgroundImage: `url(${bgImage})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
@@ -84,6 +84,8 @@ const Booking = () => {
         >
             <div className="d-flex justify-content-around w-100"
                 style={{
+                    marginTop: '20vh',
+                    marginBottom: '20vh',
                     maxWidth: '1000px',
                     opacity: 0.9,
                 }}
@@ -192,13 +194,8 @@ const Booking = () => {
                                     onChange={handleChange}
                                 />
                             </Form.Group>
-
-                            <div className="d-flex justify-content-center mt-3">
-                                <Button variant="primary" type="submit">
-                                    Book Now
-                                </Button>
-                            </div>
                         </Form>
+                        <StripeReturn/>
                     </Container>
                 </div>
                 <div

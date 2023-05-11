@@ -21,25 +21,9 @@ function NavBar() {
               Catalog
             </Link>
             <Link to="/myrentals" pathname={pathname === '/myrentals' ? 'nav-link active' : 'nav-link'}>
-            </Nav.Link>
-            <Nav.Link
-              href="#booking"
-              onClick={() => handlePageChange('Bookings')}
-              className={
-                currentPage === 'Bookings' ? 'nav-link active' : 'nav-link'
-              }
-            >
+            </Link>
+            <Link to="/booking" pathname={pathname === '/booking' ? 'nav-link active' : 'nav-link'}>
               Book Now
-            </Nav.Link>
-            <Nav.Link
-              href="#myorders"
-              onClick={() => handlePageChange('MyRentals')}
-              className={
-                currentPage === 'MyRentals' ? 'nav-link active' : 'nav-link'
-              }
-            >
-
-              My Rentals
             </Link>
             <Link to="/signup" pathname={pathname === '/signup' ? 'nav-link active' : 'nav-link'}>
               Sign up
