@@ -59,7 +59,7 @@ export default function CatItems() {
                 <td>$100/Day</td>
                 <td>1 Day(s)</td>
                 <td>
-                    <Link to="/" pathname={pathname === '/' ? 'nav-link active' : 'nav-link'}>
+                    <Link to="/booking" pathname={pathname === 'booking/' ? 'nav-link active' : 'nav-link'}>
                     <MDBBtn color='link' size='sm'>
                     <i className="fa-solid fa-arrow-right"></i>
                     </MDBBtn>
