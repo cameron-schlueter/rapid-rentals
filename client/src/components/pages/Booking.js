@@ -3,6 +3,10 @@ import { Container, Form, Card, ListGroup } from "react-bootstrap";
 import bgImage from "../../assets/BookingBG.jpeg";
 import StripeReturn from '../StripeReturn'
 
+const today = new Date();
+const dateString = today.toISOString().split('T')[0];
+
+
 const Booking = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -25,29 +29,31 @@ const Booking = () => {
 
     const handleChange = (e) => {
         const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
-        setFormData(prevState => ({ ...prevState, [e.target.name]: value }));
-
+        const newFormData = { ...formData, [e.target.name]: value };
+        setFormData(newFormData);
+    
         let newPriceDetails = { ...priceDetails };
         if (e.target.name === 'canoeQuantity') {
-            newPriceDetails.canoes = calculateCanoePrice(value, formData.checkIn, formData.checkOut);
+            newPriceDetails.canoes = calculateCanoePrice(value, newFormData.checkIn, newFormData.checkOut);
         } else if (e.target.name === 'lifejacket') {
-            newPriceDetails.lifejacket = calculateDailyCost(value, formData.checkIn, formData.checkOut, 10);
+            newPriceDetails.lifejacket = calculateDailyCost(value, newFormData.checkIn, newFormData.checkOut, 10);
         } else if (e.target.name === 'extraPaddles') {
-            newPriceDetails.extraPaddles = calculateDailyCost(value, formData.checkIn, formData.checkOut, 20);
+            newPriceDetails.extraPaddles = calculateDailyCost(value, newFormData.checkIn, newFormData.checkOut, 20);
         } else if (e.target.name === 'insurance') {
-            newPriceDetails.insurance = value ? calculateDailyCost(1, formData.checkIn, formData.checkOut, 30) : 0;
+            newPriceDetails.insurance = value ? calculateDailyCost(1, newFormData.checkIn, newFormData.checkOut, 30) : 0;
         }
-
+    
         if (e.target.name === 'checkIn' || e.target.name === 'checkOut') {
-            newPriceDetails.canoes = calculateCanoePrice(formData.canoeQuantity, formData.checkIn, formData.checkOut);
-            newPriceDetails.lifejacket = calculateDailyCost(formData.lifejacket, formData.checkIn, formData.checkOut, 10);
-            newPriceDetails.extraPaddles = calculateDailyCost(formData.extraPaddles, formData.checkIn, formData.checkOut, 20);
-            newPriceDetails.insurance = formData.insurance ? calculateDailyCost(1, formData.checkIn, formData.checkOut, 30) : 0;
+            newPriceDetails.canoes = calculateCanoePrice(newFormData.canoeQuantity, newFormData.checkIn, newFormData.checkOut);
+            newPriceDetails.lifejacket = calculateDailyCost(newFormData.lifejacket, newFormData.checkIn, newFormData.checkOut, 10);
+            newPriceDetails.extraPaddles = calculateDailyCost(newFormData.extraPaddles, newFormData.checkIn, newFormData.checkOut, 20);
+            newPriceDetails.insurance = newFormData.insurance ? calculateDailyCost(1, newFormData.checkIn, newFormData.checkOut, 30) : 0;
         }
-
+    
         newPriceDetails.total = newPriceDetails.canoes + newPriceDetails.lifejacket + newPriceDetails.extraPaddles + newPriceDetails.insurance;
         setPriceDetails(newPriceDetails);
     };
+    
 
     const calculateCanoePrice = (quantity, checkIn, checkOut) => {
         return calculateDailyCost(quantity, checkIn, checkOut, 100);
@@ -129,6 +135,7 @@ const Booking = () => {
                                     type="date"
                                     name="checkIn"
                                     value={formData.checkIn}
+                                    min={dateString}
                                     onChange={handleChange}
                                 />
                             </Form.Group>
@@ -139,12 +146,14 @@ const Booking = () => {
                                     type="date"
                                     name="checkOut"
                                     value={formData.checkOut}
+                                    min={dateString}
                                     onChange={handleChange}
                                 />
+
                             </Form.Group>
 
                             <Form.Group controlId="formBasicCanoeQuantity" className="mt-1">
-                                <Form.Label>Canoe Quantity</Form.Label>
+                                <Form.Label>Canoe Quantity ($100 per day)</Form.Label>
                                 <Form.Control
                                     as="select"
                                     name="canoeQuantity"
@@ -158,7 +167,7 @@ const Booking = () => {
                             </Form.Group>
 
                             <Form.Group controlId="formBasicLifejacket" className="mt-1">
-                                <Form.Label>Lifejacket Quantity</Form.Label>
+                                <Form.Label>Lifejacket Quantity ($10 per day)</Form.Label>
                                 <Form.Control
                                     as="select"
                                     name="lifejacket"
@@ -172,7 +181,7 @@ const Booking = () => {
                             </Form.Group>
 
                             <Form.Group controlId="formBasicExtraPaddles" className="mt-1">
-                                <Form.Label>Extra Paddles Quantity</Form.Label>
+                                <Form.Label>Extra Paddles Quantity ($20 per day)</Form.Label>
                                 <Form.Control
                                     as="select"
                                     name="extraPaddles"
@@ -188,7 +197,7 @@ const Booking = () => {
                             <Form.Group controlId="formBasicInsurance" className="mt-1">
                                 <Form.Check
                                     type="checkbox"
-                                    label="Add Insurance"
+                                    label="Add Insurance ($30 per day)"
                                     name="insurance"
                                     checked={formData.insurance}
                                     onChange={handleChange}
