@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Form, Card, ListGroup } from "react-bootstrap";
 import bgImage from "../../assets/BookingBG.jpeg";
-import StripeReturn from '../StripeReturn'
+//import StripeReturn from '../StripeReturn'
 
 const today = new Date();
 const dateString = today.toISOString().split('T')[0];
