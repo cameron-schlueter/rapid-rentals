@@ -236,7 +236,7 @@ const Booking = () => {
                                 <h3><strong>Total price:</strong> ${priceDetails.total}</h3>
                             </div>
                         </Card.Body>
-                        <StripeReturn className="stripeReturn"/>
+                        {/* <StripeReturn className="stripeReturn"/> */}
                     </Container>
                 </div>
             </div>
