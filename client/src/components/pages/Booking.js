@@ -195,7 +195,7 @@ const Booking = () => {
                                 />
                             </Form.Group>
                         </Form>
-                        <StripeReturn/>
+                    <StripeReturn/>
                     </Container>
                 </div>
                 <div
