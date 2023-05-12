@@ -1,5 +1,7 @@
 const connection = require('../config/connection');
 const { Canoe } = require('../models');
+const { Paddle } = require('../models');
+const { Jacket } = require('../models');
 
 connection.on('error', (err) => err);
 
