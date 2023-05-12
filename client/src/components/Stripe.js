@@ -3,7 +3,6 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 //import { Button } from "react-bootstrap";
 import axios from 'axios';
 
-
 const CARD_OPTIONS = {
     iconStyle: 'solid',
     style: {
@@ -40,7 +39,7 @@ export default function Stripe() {
             try {
                 const {id} = paymentMethod
                 const response = await axios.post('http://localhost:3000/booking', {
-                    amount: 10000,
+                    amount: 100,
                     id
                 })
 

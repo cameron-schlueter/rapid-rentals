@@ -204,7 +204,7 @@ const Booking = () => {
                                 />
                             </Form.Group>
                         </Form>
-                        <StripeReturn className="stripeReturn"/>
+                    <StripeReturn className="stripeReturn"/>
                     </Container>
                 </div>
                 <div
