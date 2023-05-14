@@ -21,7 +21,7 @@ function NavBar() {
             <Link className="custom-link" to="/catalog" pathname={pathname === '/catalog' ? 'nav-link active' : 'nav-link'}>
               Catalog
             </Link>
-            <Link to="/myrentals" pathname={pathname === '/myrentals' ? 'nav-link active' : 'nav-link'}>
+            <Link className="custom-link" to="/myrentals" pathname={pathname === '/myrentals' ? 'nav-link active' : 'nav-link'}>
             </Link>
             <Link className="custom-link" to="/booking" pathname={pathname === '/booking' ? 'nav-link active' : 'nav-link'}>
               Book Now

@@ -37,16 +37,6 @@ const SignUpPage = () => {
       
     >
       <div
-        className="position-absolute"
-        style={{ top: "75px", left: "50%", transform: "translateX(-50%)" }}
-      >
-        <img
-          className={styles.logo}
-          src={require("../../assets/RapidLogoV2.png")}
-          alt="Logo"
-        />
-      </div>
-      <div
         className="position-absolute bg-white rounded p-3 p-md-5"
         style={{ opacity: 0.9, boxShadow: "0px 0px 30px 0px rgba(0, 0, 0, 0.8)" }}
       >
