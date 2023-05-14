@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Form, Card, ListGroup } from "react-bootstrap";
 import bgImage from "../../assets/BookingBG.jpeg";
-//import StripeReturn from '../StripeReturn'
+import Stripe from '../Stripe'
 
 const today = new Date();
 const dateString = today.toISOString().split('T')[0];
@@ -236,7 +236,7 @@ const Booking = () => {
                                 <h3><strong>Total price:</strong> ${priceDetails.total}</h3>
                             </div>
                         </Card.Body>
-                        {/* <StripeReturn className="stripeReturn"/> */}
+                        <Stripe className="stripeReturn" amount={priceDetails.total}/>
                     </Container>
                 </div>
             </div>
