@@ -22,7 +22,7 @@ const CARD_OPTIONS = {
     }
 }
 
-export default function Stripe() {
+export default function Stripe({amount}) {
     const [success, setSuccess] = useState(false)
     const stripe = useStripe()
     const Elements = useElements()
@@ -39,7 +39,7 @@ export default function Stripe() {
             try {
                 const {id} = paymentMethod
                 const response = await axios.post('http://localhost:3000/booking', {
-                    amount: 100,
+                    amount: amount*100,
                     id
                 })
 
@@ -69,7 +69,7 @@ export default function Stripe() {
         </form>
         :
         <div>
-            <h2>You Just bought a sweet canoe</h2>
+            <h2>Payment Successful</h2>
         </div>
         }
 

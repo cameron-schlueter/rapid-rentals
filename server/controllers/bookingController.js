@@ -1,16 +1,9 @@
-const express = require('express')
-const app = express()
-require('dotenv').config()
-const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST)
-const bodyParser = require("body-parser")
-const cors = require('cors')
 
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json())
+async function BookingController (req, res) {
 
-app.use(cors())
+    require('dotenv').config()
+    const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST)
 
-app.post('/booking', cors(), async (req, res) => {
     let {amount, id} = req.body
     try {
         const payment = await stripe.paymentIntents.create({
@@ -32,9 +25,6 @@ app.post('/booking', cors(), async (req, res) => {
             success: false
         })
     }
-})
+}
 
-
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`server is listening on port 3000`)
-})
+module.exports = {BookingController}
