@@ -7,13 +7,15 @@
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .booking-form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 400px;
 }
 
 .booking-form label {
@@ -22,11 +24,13 @@
     margin: 0.5rem 0;
 }
 
-.booking-form input {
+.booking-form input, 
+.booking-form select {
     font-size: 1rem;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 100%;
 }
 
 .booking-form button {
@@ -40,6 +44,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.2s;
+    width: 100%;
 }
 
 .booking-form button:hover {
@@ -47,6 +52,28 @@
 }
 
 .stripeReturn {
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .booking-container {
+        padding: 1rem;
+    }
+
+    .booking-form label {
+        font-size: 0.9rem;
+    }
+
+    .booking-form input, 
+    .booking-form select {
+        font-size: 0.9rem;
+        padding: 0.3rem;
+    }
+
+    .booking-form button {
+        font-size: 1rem;
+        padding: 0.3rem;
+        margin: 0.5rem 0;
+    }
 }

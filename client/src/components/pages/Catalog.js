@@ -1,43 +1,33 @@
 import React from 'react';
-import CatItems from '../CatItems'
-import SortBar from '../SortBar'
-import BG2 from '../images/BG2.jpg'
+import CatItems from '../CatItems';
+import SortBar from '../SortBar';
+import BG2 from '../images/BG2.jpg';
 import {
     MDBRow,
     MDBCol,
-  } from 'mdb-react-ui-kit';
+} from 'mdb-react-ui-kit';
 
 const styles = {
     bgi: {
-        background: `url("${BG2}") no-repeat bottom left`,
+        background: `url("${BG2}") no-repeat center center/cover`,
         maxWidth: '100%',
-        height: '100vh',
-    },
-    contain: {
+        minHeight: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
+        alignItems: 'center',
     },
     row: {
         display: 'flex',
         justifyContent: 'center',
         width: '100%',
-        
-    },
-    col1: {
-        //display: 'flex',
-        backgroundColor: "rgba(248, 249, 250, 0.7)",
-        width: '20vw',
-        height: '100vh'
     },
     col2: {
-        //display: 'flex',
-        marginTop: '20vh',
-        marginBottom: '20vh',
+        marginBottom: '10%',
         width: '80vw',
         backgroundColor: "rgba(248, 249, 250, 0.7)",
-        paddingTop: '1vh',
-        paddingBottom: '1vh',
-        borderRadius: '10px'
+        padding: '2%',
+        borderRadius: '10px',
     }
 }
 
@@ -46,9 +36,7 @@ export default function Catalog() {
         <div style={styles.bgi}>
             <MDBRow style={styles.row}>
                 <MDBCol sm='12' style={styles.col2}>
-                    <div>
-                        <CatItems />
-                    </div>
+                    <CatItems />
                 </MDBCol>
             </MDBRow>
         </div>
