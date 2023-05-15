@@ -1,5 +1,5 @@
 /* const express = require('express');
-const db = require('./config/connection');
+
 
 
 const PORT = process.env.PORT || 3001;
@@ -12,12 +12,8 @@ app.use(express.json());
 
 
 
-db.once('open', () => {
-  app.listen(PORT, () => {
-    console.log(`API server running on port ${PORT}!`);
-  });
-}); */
-
+ */
+const db = require('./config/connection');
 const routes = require('./routes');
 const express = require('express')
 const app = express()
@@ -30,9 +26,8 @@ app.use(bodyParser.json())
 app.use(routes);
 app.use(cors())
 
-
-
-
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`server is listening on port 3000`)
-})
+db.once('open', () => {
+  app.listen(process.env.PORT || 3000, () => {
+  console.log(`server is listening on port 3000`)
+  })
+});
